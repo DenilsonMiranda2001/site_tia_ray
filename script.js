@@ -27,16 +27,28 @@ function confetti(amount=45){
     piece.textContent=symbols[Math.floor(Math.random()*symbols.length)];
     piece.className='confetti-piece';
     piece.style.left=`${Math.random()*100}vw`;
-    piece.style.top=`${42+Math.random()*18}vh`;
+    piece.style.top=`${10+Math.random()*22}vh`;
     piece.style.fontSize=`${10+Math.random()*20}px`;
-    piece.style.animationDuration=`${1+Math.random()*1.8}s`;
+    piece.style.animationDuration=`${1.4+Math.random()*1.8}s`;
     piece.style.setProperty('--drift',`${-120+Math.random()*240}px`);
     document.body.appendChild(piece);
-    setTimeout(()=>piece.remove(),3000);
+    setTimeout(()=>piece.remove(),3400);
   }
 }
 
-document.querySelector('.cta')?.addEventListener('click',()=>confetti(35));
+// O CTA agora segura o scroll por um instante para a chuva de luzes aparecer primeiro.
+document.querySelector('.cta')?.addEventListener('click',event=>{
+  event.preventDefault();
+  const destination=document.querySelector('#experience');
+  confetti(55);
+  if(!destination)return;
+  if(reducedMotion){
+    destination.scrollIntoView({behavior:'auto',block:'start'});
+    return;
+  }
+  window.setTimeout(()=>destination.scrollIntoView({behavior:'smooth',block:'start'}),420);
+});
+
 document.querySelector('#confettiButton')?.addEventListener('click',()=>confetti(70));
 
 const meterButton=$('meterButton'), meterValue=$('meterValue'), meterBar=$('meterBar'), meterLabel=$('meterLabel');
@@ -130,5 +142,5 @@ window.addEventListener('keydown',e=>{
 });
 
 const revealStyle=document.createElement('style');
-revealStyle.textContent=`.confetti-piece{position:fixed;z-index:100;pointer-events:none;color:#f5ff3b;animation:confettiFall 1.8s ease-out forwards}@keyframes confettiFall{to{transform:translate(var(--drift),48vh) rotate(720deg);opacity:0}}.hero>*:not(.hero-grid):not(.hero-scanline):not(.disco-orb){transform:translate(var(--mx,0),var(--my,0))}.reveal{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.8,.2,1)}.reveal.revealed{opacity:1;transform:none}.feature.reveal:nth-child(2),.rule-list>div.reveal:nth-child(2){transition-delay:.08s}.feature.reveal:nth-child(3),.rule-list>div.reveal:nth-child(3){transition-delay:.16s}@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}`;
+revealStyle.textContent=`.confetti-piece{position:fixed;z-index:100;pointer-events:none;color:#f5ff3b;animation:confettiFall 1.8s ease-out forwards}.hero>*:not(.hero-grid):not(.hero-scanline):not(.disco-orb){transform:translate(var(--mx,0),var(--my,0))}@keyframes confettiFall{to{transform:translate(var(--drift),48vh) rotate(720deg);opacity:0}}.reveal{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.8,.2,1)}.reveal.revealed{opacity:1;transform:none}.feature.reveal:nth-child(2),.rule-list>div.reveal:nth-child(2){transition-delay:.08s}.feature.reveal:nth-child(3),.rule-list>div.reveal:nth-child(3){transition-delay:.16s}@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}`;
 document.head.appendChild(revealStyle);
