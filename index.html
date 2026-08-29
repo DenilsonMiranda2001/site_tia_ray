@@ -3,54 +3,76 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#12051f" />
-  <meta name="description" content="Furduncin da Tia Ray — hoje, às 19h. Uma noite para rir, dançar e criar história." />
-  <title>Furduncin da Tia Ray 🎉</title>
+  <meta name="theme-color" content="#090313" />
+  <meta name="description" content="Furduncin da Tia Ray — 29 de agosto, às 19h, na casa do Ricardo." />
+  <title>FURDUNCIN DA TIA RAY 🪩</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
   <div class="noise"></div>
+
+  <header class="topbar"><span>FRDNCN / 001</span><span>29.08.26</span></header>
+
   <main>
-    <section class="hero">
-      <div class="badge">⚡ HOJE • 19H ⚡</div>
-      <p class="eyebrow">Prepare o psicológico.</p>
-      <h1>FURDUNCIN<br /><span>DA TIA RAY</span></h1>
-      <p class="subtitle">Uma noite oficialmente sem explicação.<br />Local: casa do Ricardo 🏠</p>
+    <section class="hero" id="top">
+      <div class="hero-grid"></div>
+      <div class="floating-note note-a">✦</div><div class="floating-note note-b">★</div><div class="floating-note note-c">◆</div>
+      <div class="badge"><span class="live-dot"></span> AO VIVO • HOJE • 19H</div>
+      <p class="eyebrow">Um evento de procedência duvidosa.</p>
+      <h1><span>FURDUNCIN</span><br /><em>DA TIA RAY</em></h1>
+      <p class="subtitle">A reunião que ninguém pediu,<br /><strong>mas todo mundo precisava.</strong></p>
 
       <div class="countdown-wrap">
-        <p>O furduncin começa em</p>
+        <div class="countdown-caption" id="countdownCaption">A contagem regressiva começou.</div>
         <div id="countdown" class="countdown" aria-live="polite">
-          <div><strong id="hours">00</strong><small>horas</small></div>
-          <div><strong id="minutes">00</strong><small>min</small></div>
-          <div><strong id="seconds">00</strong><small>seg</small></div>
+          <div><strong id="hours">00</strong><small>horas</small></div><b>:</b>
+          <div><strong id="minutes">00</strong><small>minutos</small></div><b>:</b>
+          <div><strong id="seconds">00</strong><small>segundos</small></div>
         </div>
-        <div id="started" class="started">🔥 JÁ COMEÇOU! 🔥</div>
+        <div id="started" class="started">🔥 O FURDUNCIN ESTÁ ON 🔥</div>
       </div>
 
-      <a class="cta" href="#manifesto">ENTRAR NO FURDUNCIN ↓</a>
+      <a class="cta" href="#experience">LIBERAR O FURDUNCIN <span>↘</span></a>
+      <div class="scroll-hint">SCROLL PARA VER A RESENHA ↓</div>
     </section>
 
-    <section id="manifesto" class="manifesto">
-      <div class="section-label">01 / O MANIFESTO</div>
-      <h2>Hoje ninguém veio<br /><em>para ficar parado.</em></h2>
-      <p>É simples: juntar a galera, colocar a energia lá em cima e deixar a noite acontecer. O resto vira história.</p>
-      <div class="cards">
-        <article><span>🎶</span><h3>Som no talo</h3><p>Playlist digna de um evento histórico.</p></article>
-        <article><span>😂</span><h3>Resenha pesada</h3><p>Risada liberada do começo ao fim.</p></article>
-        <article><span>📸</span><h3>Registros oficiais</h3><p>As melhores histórias merecem prova.</p></article>
+    <div class="marquee" aria-hidden="true"><div>FURDUNCIN • TIA RAY • RICARDO • 19H • É HOJE • FURDUNCIN • TIA RAY • RICARDO • 19H • É HOJE • </div></div>
+
+    <section class="experience" id="experience">
+      <div class="section-kicker">02 / A EXPERIÊNCIA</div>
+      <div class="experience-head"><h2>UMA NOITE<br /><span>SEM MANUAL.</span></h2><p>Não existe dress code. Não existe protocolo. Existe presença, música, risada e histórias para contar amanhã.</p></div>
+      <div class="feature-grid">
+        <article class="feature feature-main"><div class="feature-number">01</div><span class="icon">🪩</span><h3>PISTA IMPROVISADA</h3><p>Onde houver espaço, existe uma pista. Onde tocar música, existe motivo.</p><div class="arrow">↗</div></article>
+        <article class="feature"><div class="feature-number">02</div><span class="icon">😂</span><h3>RESENHA</h3><p>Conversas que começam normais e terminam em história.</p></article>
+        <article class="feature dark"><div class="feature-number">03</div><span class="icon">📸</span><h3>ARQUIVO OFICIAL</h3><p>Registre os momentos bons. O resto fica entre os envolvidos.</p></article>
       </div>
     </section>
 
-    <section class="info">
-      <div><span>QUANDO</span><strong>29 AGO • 19H</strong></div>
-      <div><span>ONDE</span><strong>CASA DO RICARDO</strong></div>
-      <div><span>STATUS</span><strong class="pulse">É HOJE.</strong></div>
+    <section class="meter-section">
+      <div class="meter-copy"><div class="section-kicker">03 / SISTEMA DE MEDIÇÃO</div><h2>NÍVEL DE<br /><span>FURDUNCIN</span></h2><p>Uma métrica absolutamente científica e completamente inventada.</p><button id="meterButton" class="meter-button">MEDIR AGORA ↗</button></div>
+      <div class="meter"><div class="meter-orbit"></div><div class="meter-value" id="meterValue">0%</div><div class="meter-label" id="meterLabel">AGUARDANDO A GALERA</div><div class="meter-bar"><span id="meterBar"></span></div></div>
     </section>
+
+    <section class="rules">
+      <div class="section-kicker">04 / REGULAMENTO NÃO OFICIAL</div>
+      <div class="rule-list">
+        <div><span>01</span><strong>Chegue com disposição.</strong><small>O restante se resolve.</small></div>
+        <div><span>02</span><strong>Respeito sempre.</strong><small>A resenha é melhor quando todo mundo curte.</small></div>
+        <div><span>03</span><strong>Faça história, não confusão.</strong><small>Bom senso também participa da festa.</small></div>
+      </div>
+    </section>
+
+    <section class="location">
+      <div class="location-card"><span class="pin">⌖</span><div><small>DESTINO OFICIAL</small><h2>CASA DO RICARDO</h2><p>29 DE AGOSTO • A PARTIR DAS 19H</p></div><div class="location-badge">É HOJE.</div></div>
+    </section>
+
+    <section class="finale"><p>FURDUNCIN DA TIA RAY</p><h2>ATÉ A<br /><span>PRÓXIMA.</span></h2><button id="confettiButton" class="ghost-button">SOLTAR A RESENHA ✦</button></section>
   </main>
-  <footer>Furduncin da Tia Ray © 2026 • feito na resenha.</footer>
+  <footer>Furduncin da Tia Ray © 2026 • feito na resenha, com carinho e bom senso.</footer>
   <script src="script.js"></script>
 </body>
 </html>
